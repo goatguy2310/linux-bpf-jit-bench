@@ -2622,6 +2622,7 @@ struct bpf_prog *bpf_prog_get(u32 ufd)
 {
 	return __bpf_prog_get(ufd, NULL, false);
 }
+EXPORT_SYMBOL_GPL(bpf_prog_put);
 
 struct bpf_prog *bpf_prog_get_type_dev(u32 ufd, enum bpf_prog_type type,
 				       bool attach_drv)

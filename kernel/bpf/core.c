@@ -691,6 +691,7 @@ void bpf_prog_kallsyms_add(struct bpf_prog *fp)
 	bpf_ksym_add(&fp->aux->ksym_prefix);
 #endif
 }
+EXPORT_SYMBOL_GPL(bpf_prog_kallsyms_add);
 
 void bpf_prog_kallsyms_del(struct bpf_prog *fp)
 {
@@ -704,6 +705,7 @@ void bpf_prog_kallsyms_del(struct bpf_prog *fp)
 	bpf_ksym_del(&fp->aux->ksym_prefix);
 #endif
 }
+EXPORT_SYMBOL_GPL(bpf_prog_kallsyms_del);
 
 static struct bpf_ksym *bpf_ksym_find(unsigned long addr)
 {
@@ -1090,6 +1092,7 @@ bpf_jit_binary_alloc(unsigned int proglen, u8 **image_ptr,
 
 	return hdr;
 }
+EXPORT_SYMBOL_GPL(bpf_jit_alloc_exec);
 
 void bpf_jit_binary_free(struct bpf_binary_header *hdr)
 {
@@ -1098,6 +1101,7 @@ void bpf_jit_binary_free(struct bpf_binary_header *hdr)
 	bpf_jit_free_exec(hdr);
 	bpf_jit_uncharge_modmem(size);
 }
+EXPORT_SYMBOL_GPL(bpf_jit_free_exec);
 
 /* Allocate jit binary from bpf_prog_pack allocator.
  * Since the allocated memory is RO+X, the JIT engine cannot write directly

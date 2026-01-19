@@ -2327,6 +2327,7 @@ int set_memory_rox(unsigned long addr, int numpages)
 	return change_page_attr_set_clr(&addr, numpages, __pgprot(0), clr, 0,
 					CPA_COLLAPSE, NULL);
 }
+EXPORT_SYMBOL_GPL(set_memory_rox);
 
 int set_memory_rw(unsigned long addr, int numpages)
 {
